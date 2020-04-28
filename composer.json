@@ -1,4 +1,18 @@
 {
+    "name": "skyfile/pdd-union-sdk",
+    "description": "多多客SDK",
+    "type": "composer-plugin",
+    "require": {
+        "php": "v1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "skyfile",
+            "email": "fengfilesky@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
     "require": {
         "php": "^5.5|^7.0",
         "ext-curl": "*",
