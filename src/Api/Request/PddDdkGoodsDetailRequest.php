@@ -15,6 +15,11 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 	*/
 	private $customParameters;
 
+    /**
+     * @JsonProperty(String, "goods_sign")
+     */
+	private $goodsSign;
+
 	/**
 	* @JsonProperty(List<Long>, "goods_id_list")
 	*/
@@ -43,6 +48,7 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
+        $this->setUserParam($params, "goods_sign", $this->goodsSign);
 		$this->setUserParam($params, "goods_id_list", $this->goodsIdList);
 		$this->setUserParam($params, "pid", $this->pid);
 		$this->setUserParam($params, "plan_type", $this->planType);
@@ -70,6 +76,11 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 	{
 		$this->customParameters = $customParameters;
 	}
+
+	public function setGoodsSign($goodsSign)
+    {
+        $this->goodsSign = $goodsSign;
+    }
 
 	public function setGoodsIdList($goodsIdList)
 	{

@@ -30,6 +30,11 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 	*/
 	private $goodsIdList;
 
+    /**
+     * @JsonProperty(List<String>, "goods_sign_list")
+     */
+	private $goodsSignList;
+
 	/**
 	* @JsonProperty(Boolean, "is_brand_goods")
 	*/
@@ -96,6 +101,7 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "cat_id", $this->catId);
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
 		$this->setUserParam($params, "goods_id_list", $this->goodsIdList);
+        $this->setUserParam($params, "goods_sign_list", $this->goodsSignList);
 		$this->setUserParam($params, "is_brand_goods", $this->isBrandGoods);
 		$this->setUserParam($params, "keyword", $this->keyword);
 		$this->setUserParam($params, "list_id", $this->listId);
@@ -145,6 +151,11 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 	{
 		$this->goodsIdList = $goodsIdList;
 	}
+
+    public function setGoodsSignList($goodsSignList)
+    {
+        $this->goodsSignList = $goodsSignList;
+    }
 
 	public function setIsBrandGoods($isBrandGoods)
 	{
