@@ -51,9 +51,9 @@ class PddDdkGoodsPromotionUrlGenerateRequest extends PopBaseHttpRequest
 	private $generateWeApp;
 
 	/**
-	* @JsonProperty(List<Long>, "goods_id_list")
+	* @JsonProperty(List<Long>, "goods_sign_list")
 	*/
-	private $goodsIdList;
+	private $goodsSignList;
 
 	/**
 	* @JsonProperty(Boolean, "multi_group")
@@ -85,7 +85,7 @@ class PddDdkGoodsPromotionUrlGenerateRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "generate_weapp_webview", $this->generateWeappWebview);
 		$this->setUserParam($params, "generate_weiboapp_webview", $this->generateWeiboappWebview);
 		$this->setUserParam($params, "generate_we_app", $this->generateWeApp);
-		$this->setUserParam($params, "goods_id_list", $this->goodsIdList);
+		$this->setUserParam($params, "goods_sign_list", $this->goodsSignList);
 		$this->setUserParam($params, "multi_group", $this->multiGroup);
 		$this->setUserParam($params, "p_id", $this->pId);
 		$this->setUserParam($params, "search_id", $this->searchId);
@@ -148,9 +148,9 @@ class PddDdkGoodsPromotionUrlGenerateRequest extends PopBaseHttpRequest
 		$this->generateWeApp = $generateWeApp;
 	}
 
-	public function setGoodsIdList($goodsIdList)
+	public function setGoodsSignList($goodsSignList)
 	{
-		$this->goodsIdList = $goodsIdList;
+		$this->goodsSignList = $goodsSignList;
 	}
 
 	public function setMultiGroup($multiGroup)
