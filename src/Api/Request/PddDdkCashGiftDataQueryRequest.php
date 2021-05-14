@@ -37,6 +37,11 @@ class PddDdkCashGiftDataQueryRequest extends PopBaseHttpRequest
      */
     private $startTime;
 
+    /**
+     * @JsonProperty(Long "acquire_end_time")
+     */
+    private $acquireEndTime;
+
 
     protected function setUserParams(&$params)
     {
@@ -69,7 +74,7 @@ class PddDdkCashGiftDataQueryRequest extends PopBaseHttpRequest
 
     public function setEndTime($endTime)
     {
-        $this->endTime = endTime;
+        $this->endTime = $endTime;
     }
 
     public function setStartTime($startTime)
@@ -85,5 +90,10 @@ class PddDdkCashGiftDataQueryRequest extends PopBaseHttpRequest
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
+    }
+
+    public function setAcquireEndTime($acquireEndTime)
+    {
+        $this->acquireEndTime = $acquireEndTime;
     }
 }
