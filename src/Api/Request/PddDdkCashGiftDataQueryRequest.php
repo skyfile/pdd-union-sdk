@@ -85,4 +85,9 @@ class PddDdkCashGiftDataQueryRequest extends PopBaseHttpRequest
     {
         $this->pageSize = $pageSize;
     }
+
+    public function setAcquireEndTime($acquireEndTime)
+    {
+        $this->acquireEndTime = $acquireEndTime;
+    }
 }
