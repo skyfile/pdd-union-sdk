@@ -37,12 +37,6 @@ class PddDdkCashGiftDataQueryRequest extends PopBaseHttpRequest
      */
     private $startTime;
 
-    /**
-     * @JsonProperty(Long "acquire_end_time")
-     */
-    private $acquireEndTime;
-
-
     protected function setUserParams(&$params)
     {
         $this->setUserParam($params, "cash_gift_id", $this->cashGiftId);
@@ -64,7 +58,7 @@ class PddDdkCashGiftDataQueryRequest extends PopBaseHttpRequest
 
     public function getType()
     {
-        return "pdd.ddk.cashgift.create";
+        return "pdd.ddk.cashgift.data.query";
     }
 
     public function setCashGiftId($cashGiftId)
@@ -90,10 +84,5 @@ class PddDdkCashGiftDataQueryRequest extends PopBaseHttpRequest
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
-    }
-
-    public function setAcquireEndTime($acquireEndTime)
-    {
-        $this->acquireEndTime = $acquireEndTime;
     }
 }
