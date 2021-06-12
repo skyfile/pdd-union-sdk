@@ -2,6 +2,9 @@
 
 namespace Com\Pdd\Pop\Sdk\Api\Request;
 
+use Com\Pdd\Pop\Sdk\PopBaseHttpRequest;
+use Com\Pdd\Pop\Sdk\PopBaseJsonEntity;
+
 class PddDdkCashGiftStatusUpdateRequest extends PopBaseHttpRequest
 {
     public function __construct()
