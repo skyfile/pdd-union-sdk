@@ -80,6 +80,16 @@ class PddDdkGoodsPromotionUrlGenerateRequest extends PopBaseHttpRequest
      */
     private $cashGiftId;
 
+    /**
+     * @JsonProperty(String, "cash_gift_name")
+     */
+    private $cashGiftName;
+
+    /**
+     * @JsonProperty(bool, "generate_authority_url")
+     */
+    private $generateAuthorityUrl;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
@@ -96,7 +106,8 @@ class PddDdkGoodsPromotionUrlGenerateRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "search_id", $this->searchId);
 		$this->setUserParam($params, "zs_duo_id", $this->zsDuoId);
         $this->setUserParam($params, "cash_gift_id", $this->cashGiftId);
-
+        $this->setUserParam($params, "case_gift_name", $this->cashGiftName);
+        $this->setUserParam($params, "generate_authority_url", $this->generateAuthorityUrl);
 	}
 
 	public function getVersion()
@@ -182,6 +193,14 @@ class PddDdkGoodsPromotionUrlGenerateRequest extends PopBaseHttpRequest
     public function setCashGiftId($zsDuoId)
     {
         $this->cashGiftId = $zsDuoId;
+    }
+
+    public function setCashGiftName($name){
+	    $this->cashGiftName = $name;
+    }
+
+    public function setGenerateAuthorityUrl($gen) {
+	    $this->generateAuthorityUrl = $gen;
     }
 
 }
