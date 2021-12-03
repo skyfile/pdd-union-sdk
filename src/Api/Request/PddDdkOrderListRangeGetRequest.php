@@ -10,6 +10,11 @@ class PddDdkOrderListRangeGetRequest extends PopBaseHttpRequest
 	{
 
 	}
+    /**
+     * @JsonProperty(BOOLEAN, "cash_gift_order")
+     */
+    private $cashGiftOrder;
+
 	/**
 	* @JsonProperty(String, "end_time")
 	*/
@@ -25,6 +30,11 @@ class PddDdkOrderListRangeGetRequest extends PopBaseHttpRequest
 	*/
 	private $pageSize;
 
+    /**
+     * @JsonProperty(Integer, "query_order_type")
+     */
+    private $queryOrderType;
+
 	/**
 	* @JsonProperty(String, "start_time")
 	*/
@@ -32,9 +42,11 @@ class PddDdkOrderListRangeGetRequest extends PopBaseHttpRequest
 
 	protected function setUserParams(&$params)
 	{
+        $this->setUserParam($params, "cash_gift_order", $this->cashGiftOrder);
 		$this->setUserParam($params, "end_time", $this->endTime);
 		$this->setUserParam($params, "last_order_id", $this->lastOrderId);
 		$this->setUserParam($params, "page_size", $this->pageSize);
+        $this->setUserParam($params, "query_order_type", $this->queryOrderType);
 		$this->setUserParam($params, "start_time", $this->startTime);
 
 	}
@@ -54,7 +66,12 @@ class PddDdkOrderListRangeGetRequest extends PopBaseHttpRequest
 		return "pdd.ddk.order.list.range.get";
 	}
 
-	public function setEndTime($endTime)
+    public function setCashGiftOrder($cashGiftOrder)
+    {
+        $this->cashGiftOrder = $cashGiftOrder;
+    }
+
+    public function setEndTime($endTime)
 	{
 		$this->endTime = $endTime;
 	}
@@ -68,6 +85,11 @@ class PddDdkOrderListRangeGetRequest extends PopBaseHttpRequest
 	{
 		$this->pageSize = $pageSize;
 	}
+
+    public function setQueryOrderType($query_order_type)
+    {
+        $this->queryOrderType = $query_order_type;
+    }
 
 	public function setStartTime($startTime)
 	{
