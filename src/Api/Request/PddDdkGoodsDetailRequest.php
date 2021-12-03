@@ -16,6 +16,11 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 	private $customParameters;
 
     /**
+     * @JsonProperty(Integer, "goods_img_type")
+     */
+    private $goodsImgType;
+
+    /**
      * @JsonProperty(String, "goods_sign")
      */
 	private $goodsSign;
@@ -24,6 +29,11 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 	* @JsonProperty(List<Long>, "goods_id_list")
 	*/
 	private $goodsIdList;
+
+    /**
+     * @JsonProperty(BOOLEAN, "need_sku_info")
+     */
+    private $needSkuInfo;
 
 	/**
 	* @JsonProperty(String, "pid")
@@ -48,7 +58,9 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
+        $this->setUserParam($params, "goods_img_type", $this->goodsImgType);
         $this->setUserParam($params, "goods_sign", $this->goodsSign);
+        $this->setUserParam($params, "need_sku_info", $this->needSkuInfo);
 		$this->setUserParam($params, "goods_id_list", $this->goodsIdList);
 		$this->setUserParam($params, "pid", $this->pid);
 		$this->setUserParam($params, "plan_type", $this->planType);
@@ -77,9 +89,24 @@ class PddDdkGoodsDetailRequest extends PopBaseHttpRequest
 		$this->customParameters = $customParameters;
 	}
 
+    public function setGoodsImgType($goods_img_type)
+    {
+        $this->goodsImgType = $goods_img_type;
+    }
+
+    public function setGoodsSignList($goodsSignList)
+    {
+        $this->goodsSignList = $goodsSignList;
+    }
+
 	public function setGoodsSign($goodsSign)
     {
         $this->goodsSign = $goodsSign;
+    }
+
+    public function setNeedSkuInfo($need_sku_info)
+    {
+        $this->needSkuInfo = $need_sku_info;
     }
 
 	public function setGoodsIdList($goodsIdList)

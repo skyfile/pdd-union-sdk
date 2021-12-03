@@ -10,7 +10,17 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 	{
 
 	}
-	/**
+    /**
+     * @JsonProperty(List<Integer>, "activity_tags")
+     */
+    private $activityTags;
+
+    /**
+     * @JsonProperty(Long, "cat_id")
+     */
+    private $catId;
+
+    /**
 	* @JsonProperty(Integer, "channel_type")
 	*/
 	private $channelType;
@@ -19,6 +29,16 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 	* @JsonProperty(String, "custom_parameters")
 	*/
 	private $customParameters;
+
+    /**
+     * @JsonProperty(Integer, "goods_img_type")
+     */
+    private $goodsImgType;
+
+    /**
+     * @JsonProperty(List<String>, "goods_sign_list")
+     */
+    private $goodsSignList;
 
 	/**
 	* @JsonProperty(Integer, "limit")
@@ -42,8 +62,12 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 
 	protected function setUserParams(&$params)
 	{
+        $this->setUserParam($params, "activity_tags", $this->activityTags);
+        $this->setUserParam($params, "cat_id", $this->catId);
 		$this->setUserParam($params, "channel_type", $this->channelType);
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
+        $this->setUserParam($params, "goods_img_type", $this->goodsImgType);
+        $this->setUserParam($params, "goods_sign_list", $this->goodsSignList);
 		$this->setUserParam($params, "limit", $this->limit);
 		$this->setUserParam($params, "list_id", $this->listId);
 		$this->setUserParam($params, "offset", $this->offset);
@@ -66,6 +90,16 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 		return "pdd.ddk.goods.recommend.get";
 	}
 
+    public function setActivityTags($activityTags)
+    {
+        $this->activityTags = $activityTags;
+    }
+
+    public function setCatId($catId)
+    {
+        $this->catId = $catId;
+    }
+
 	public function setChannelType($channelType)
 	{
 		$this->channelType = $channelType;
@@ -75,6 +109,16 @@ class PddDdkGoodsRecommendGetRequest extends PopBaseHttpRequest
 	{
 		$this->customParameters = $customParameters;
 	}
+
+    public function setGoodsImgType($goods_img_type)
+    {
+        $this->goodsImgType = $goods_img_type;
+    }
+
+    public function setGoodsSignList($goodsSignList)
+    {
+        $this->goodsSignList = $goodsSignList;
+    }
 
 	public function setLimit($limit)
 	{

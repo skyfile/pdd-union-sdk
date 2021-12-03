@@ -15,10 +15,15 @@ class PddDdkOrderDetailGetRequest extends PopBaseHttpRequest
 	*/
 	private $orderSn;
 
+    /**
+     * @JsonProperty(Integer, "query_order_type")
+     */
+    private $queryOrderType;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "order_sn", $this->orderSn);
-
+        $this->setUserParam($params, "query_order_type", $this->queryOrderType);
 	}
 
 	public function getVersion()
@@ -40,5 +45,10 @@ class PddDdkOrderDetailGetRequest extends PopBaseHttpRequest
 	{
 		$this->orderSn = $orderSn;
 	}
+
+    public function setQueryOrderType($query_order_type)
+    {
+        $this->queryOrderType = $query_order_type;
+    }
 
 }

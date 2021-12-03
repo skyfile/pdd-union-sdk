@@ -15,6 +15,16 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 	*/
 	private $activityTags;
 
+    /**
+     * @JsonProperty(List<Integer>, "block_cat_packages")
+     */
+	private $blockCatPackages;
+
+    /**
+     * @JsonProperty(List<Integer>, "block_cats")
+     */
+    private $blockCats;
+
 	/**
 	* @JsonProperty(Long, "cat_id")
 	*/
@@ -29,6 +39,11 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 	* @JsonProperty(List<Long>, "goods_id_list")
 	*/
 	private $goodsIdList;
+
+    /**
+     * @JsonProperty(Integer, "goods_img_type")
+     */
+    private $goodsImgType;
 
     /**
      * @JsonProperty(List<String>, "goods_sign_list")
@@ -90,6 +105,11 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 	*/
 	private $sortType;
 
+    /**
+     * @JsonProperty(Boolean, "use_customized")
+     */
+    private $useCustomized;
+
 	/**
 	* @JsonProperty(Boolean, "with_coupon")
 	*/
@@ -98,8 +118,11 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "activity_tags", $this->activityTags);
+        $this->setUserParam($params, "block_cat_packages", $this->blockCatPackages);
+        $this->setUserParam($params, "block_cats", $this->blockCats);
 		$this->setUserParam($params, "cat_id", $this->catId);
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
+        $this->setUserParam($params, "goods_img_type", $this->goodsImgType);
 		$this->setUserParam($params, "goods_id_list", $this->goodsIdList);
         $this->setUserParam($params, "goods_sign_list", $this->goodsSignList);
 		$this->setUserParam($params, "is_brand_goods", $this->isBrandGoods);
@@ -113,6 +136,7 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "pid", $this->pid);
 		$this->setUserParam($params, "range_list", $this->rangeList);
 		$this->setUserParam($params, "sort_type", $this->sortType);
+		$this->setUserParam($params, "use_customized", $this->useCustomized);
 		$this->setUserParam($params, "with_coupon", $this->withCoupon);
 
 	}
@@ -137,6 +161,16 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 		$this->activityTags = $activityTags;
 	}
 
+	public function setBlockCatPackages($block_cat_packages)
+    {
+        $this->blockCatPackages = $block_cat_packages;
+    }
+
+    public function setBlockCats($block_cats)
+    {
+        $this->blockCats = $block_cats;
+    }
+
 	public function setCatId($catId)
 	{
 		$this->catId = $catId;
@@ -151,6 +185,11 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 	{
 		$this->goodsIdList = $goodsIdList;
 	}
+
+	public function setGoodsImgType($goods_img_type)
+    {
+        $this->goodsImgType = $goods_img_type;
+    }
 
     public function setGoodsSignList($goodsSignList)
     {
@@ -211,6 +250,11 @@ class PddDdkGoodsSearchRequest extends PopBaseHttpRequest
 	{
 		$this->sortType = $sortType;
 	}
+
+	public function setUseCustomized($use_customized)
+    {
+        $this->useCustomized = $use_customized;
+    }
 
 	public function setWithCoupon($withCoupon)
 	{
