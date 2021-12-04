@@ -25,11 +25,17 @@ class PddDdkGoodsPidQueryRequest extends PopBaseHttpRequest
 	*/
 	private $pidList;
 
+    /**
+     * @JsonProperty(Integer, "status")
+     */
+    private $status;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "page", $this->page);
 		$this->setUserParam($params, "page_size", $this->pageSize);
 		$this->setUserParam($params, "pid_list", $this->pidList);
+        $this->setUserParam($params, 'status', $this->status);
 
 	}
 
@@ -62,5 +68,10 @@ class PddDdkGoodsPidQueryRequest extends PopBaseHttpRequest
 	{
 		$this->pidList = $pidList;
 	}
+
+	public function setStatus($status)
+    {
+        $this->status = $status;
+    }
 
 }

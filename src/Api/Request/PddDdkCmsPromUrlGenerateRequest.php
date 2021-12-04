@@ -36,9 +36,14 @@ class PddDdkCmsPromUrlGenerateRequest extends PopBaseHttpRequest
 	private $generateShortUrl;
 
 	/**
-	* @JsonProperty(Boolean, "generate_weapp_webview")
+	* @JsonProperty(Boolean, "generate_we_app")
 	*/
-	private $generateWeappWebview;
+	private $generateWeApp;
+
+    /**
+     * @JsonProperty(String, "keyword")
+     */
+	private $keyword;
 
 	/**
 	* @JsonProperty(Boolean, "multi_group")
@@ -57,7 +62,8 @@ class PddDdkCmsPromUrlGenerateRequest extends PopBaseHttpRequest
 		$this->setUserParam($params, "generate_mobile", $this->generateMobile);
 		$this->setUserParam($params, "generate_schema_url", $this->generateSchemaUrl);
 		$this->setUserParam($params, "generate_short_url", $this->generateShortUrl);
-		$this->setUserParam($params, "generate_weapp_webview", $this->generateWeappWebview);
+		$this->setUserParam($params, "generate_we_app", $this->generateWeApp);
+        $this->setUserParam($params, "keyword", $this->keyword);
 		$this->setUserParam($params, "multi_group", $this->multiGroup);
 		$this->setUserParam($params, "p_id_list", $this->pIdList);
 
@@ -103,10 +109,15 @@ class PddDdkCmsPromUrlGenerateRequest extends PopBaseHttpRequest
 		$this->generateShortUrl = $generateShortUrl;
 	}
 
-	public function setGenerateWeappWebview($generateWeappWebview)
+	public function setGenerateWeApp($generateWeappWebview)
 	{
-		$this->generateWeappWebview = $generateWeappWebview;
+		$this->generateWeApp = $generateWeappWebview;
 	}
+
+	public function setKeyword($keyword)
+    {
+        $this->keywords = $keyword;
+    }
 
 	public function setMultiGroup($multiGroup)
 	{

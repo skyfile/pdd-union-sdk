@@ -10,6 +10,11 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	{
 
 	}
+    /**
+     * @JsonProperty(Long, "amount")
+     */
+	private $amount;
+
 	/**
 	* @JsonProperty(Integer, "channel_type")
 	*/
@@ -24,6 +29,11 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyLotteryParam, "diy_lottery_param")
 	*/
 	private $diyLotteryParam;
+
+    /**
+     * @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyOneYuanParam, "diy_one_yuan_param")
+     */
+	private $diyOneYuanParam;
 
 	/**
 	* @JsonProperty(\Com\Pdd\Pop\Sdk\Api\Request\PddDdkRpPromUrlGenerateRequest_DiyRedPacketParam, "diy_red_packet_param")
@@ -55,17 +65,25 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	*/
 	private $pIdList;
 
+    /**
+     * @JsonProperty(Long, "scratch_card_amount")
+     */
+	private $scratchCardAmount;
+
 	protected function setUserParams(&$params)
 	{
+	    $this->setUserParam($params, "amount", $this->amount);
 		$this->setUserParam($params, "channel_type", $this->channelType);
 		$this->setUserParam($params, "custom_parameters", $this->customParameters);
 		$this->setUserParam($params, "diy_lottery_param", $this->diyLotteryParam);
+        $this->setUserParam($params, "diy_one_yuan_param", $this->diyOneYuanParam);
 		$this->setUserParam($params, "diy_red_packet_param", $this->diyRedPacketParam);
 		$this->setUserParam($params, "generate_qq_app", $this->generateQqApp);
 		$this->setUserParam($params, "generate_schema_url", $this->generateSchemaUrl);
 		$this->setUserParam($params, "generate_short_url", $this->generateShortUrl);
 		$this->setUserParam($params, "generate_we_app", $this->generateWeApp);
 		$this->setUserParam($params, "p_id_list", $this->pIdList);
+		$this->setUserParam($params, "scratch_card_amount", $this->scratchCardAmount);
 
 	}
 
@@ -84,6 +102,11 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 		return "pdd.ddk.rp.prom.url.generate";
 	}
 
+	public function setAmount($amount)
+    {
+        $this->amount = $amount;
+    }
+
 	public function setChannelType($channelType)
 	{
 		$this->channelType = $channelType;
@@ -98,6 +121,11 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	{
 		$this->diyLotteryParam = $diyLotteryParam;
 	}
+
+	public function setDiyOneYuanParam($diyOneYuanParam)
+    {
+        $this->diyOneYuanParam = $diyOneYuanParam;
+    }
 
 	public function setDiyRedPacketParam($diyRedPacketParam)
 	{
@@ -128,6 +156,11 @@ class PddDdkRpPromUrlGenerateRequest extends PopBaseHttpRequest
 	{
 		$this->pIdList = $pIdList;
 	}
+
+	public function setScratchCardAmount($scratchCardAmount)
+    {
+	    $this->scratchCardAmount = $scratchCardAmount;
+    }
 
 }
 
@@ -199,6 +232,24 @@ class PddDdkRpPromUrlGenerateRequest_DiyLotteryParamRangeItemsItem extends PopBa
 		$this->rangeTo = $rangeTo;
 	}
 
+}
+
+class PddDdkRpPromUrlGenerateRequest_DiyOneYuanParam extends PopBaseJsonEntity
+{
+    public function __construct()
+    {
+
+    }
+
+    /**
+     * @JsonProperty(String, "goods_sign")
+     */
+    private $goodsSign;
+
+    public function setGoodsSign($goodsSign)
+    {
+        $this->goodsSign = $goodsSign;
+    }
 }
 
 class PddDdkRpPromUrlGenerateRequest_DiyRedPacketParam extends PopBaseJsonEntity

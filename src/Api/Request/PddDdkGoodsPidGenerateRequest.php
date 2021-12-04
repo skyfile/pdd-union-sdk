@@ -20,11 +20,16 @@ class PddDdkGoodsPidGenerateRequest extends PopBaseHttpRequest
 	*/
 	private $pIdNameList;
 
+    /**
+     * @JsonProperty(Long, "media_id")
+     */
+	private $mediaId;
+
 	protected function setUserParams(&$params)
 	{
 		$this->setUserParam($params, "number", $this->number);
 		$this->setUserParam($params, "p_id_name_list", $this->pIdNameList);
-
+        $this->setUserParam($params, "media_id", $this->mediaId);
 	}
 
 	public function getVersion()
@@ -52,4 +57,8 @@ class PddDdkGoodsPidGenerateRequest extends PopBaseHttpRequest
 		$this->pIdNameList = $pIdNameList;
 	}
 
+	public function setMediaId($media_id)
+    {
+	    $this->mediaId = $media_id;
+    }
 }
